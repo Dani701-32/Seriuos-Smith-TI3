@@ -34,11 +34,8 @@ public class PlayerMovement : MonoBehaviour
 
 
         //Se clicar em R
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-
-
-        }
+        
+        
 
     }
 
