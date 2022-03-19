@@ -1,44 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float rotateSpeed = 5f;
-    public Rigidbody rb;
-    float moveX, moveZ;
-    public InputAction playerMoviment;
-
-    Vector3 moveDirection = Vector3.zero;
-    private void OnEnable()
-    {
-        playerMoviment.Enable();
-    }
-
-    private void OnDisable()
-    {
-        playerMoviment.Disable();
-    }
-
+    public CharacterController controller;
+    public float speed = 6;
+    
+    public Transform cam;
+    public float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
     void Update()
     {
-        moveDirection = playerMoviment.ReadValue<Vector3>();
+        float Horizontal = Input.GetAxisRaw("Horizontal");
+        float Vertical = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3 (Horizontal , 0f , Vertical).normalized;
 
-    }
-
-    //Chamado em uma quantidade especifica de vezes por frame pra manter a fisica normal
-    void FixedUpdate()
-    {
-        rb.velocity = new Vector3(moveDirection.x * moveSpeed, 0, moveDirection.z * moveSpeed);
-        if (moveDirection != Vector3.zero)
+        if(direction.magnitude >= 0.1f)
         {
-            Quaternion toRotate = Quaternion.LookRotation(moveDirection, Vector3.up);
-
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, rotateSpeed);
+            float targetAngle = Mathf.Atan2(direction.x , direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y; // função matematica que calcula a direção do X e do Z e calcula o angulo que vai apontar a camera.
+            float angle =  Mathf.SmoothDampAngle(transform.eulerAngles.y , targetAngle , ref turnSmoothVelocity , turnSmoothTime); // função pra deixar a rotação mais suave.
+            
+            transform.rotation = Quaternion.Euler(0f , angle , 0f); //rotação do objeto apicado.
+            
+            Vector3 moveDirection = Quaternion.Euler(0f , targetAngle , 0f) * Vector3.forward; // Transforma a rotação da camera na sua direção que vai andar o player
+            controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+            
         }
     }
+    
 
 
 }
