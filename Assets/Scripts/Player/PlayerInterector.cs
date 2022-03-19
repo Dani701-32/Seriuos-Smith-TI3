@@ -1,9 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 
 public class PlayerInterector : MonoBehaviour
 {
+    public GameObject interactor;
+    /*
     public IInterectable currentInterectable = null;
     public InputAction playerInteracion;
     private void OnEnable()
@@ -18,11 +20,11 @@ public class PlayerInterector : MonoBehaviour
     private void Update()
     {
         CheckInterectable(); 
-
     }
     private void CheckInterectable()
     {
         if (currentInterectable == null) return;
+        OnEnable(); 
         playerInteracion.performed  += context => currentInterectable.Interect();
     }
 
@@ -43,7 +45,20 @@ public class PlayerInterector : MonoBehaviour
         IInterectable interectable = other.GetComponent<IInterectable>();
         if (interectable == null) return;
         if (interectable != currentInterectable) return;
-
+        OnDisable(); 
         currentInterectable = null;
     }
+    */
+    void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.CompareTag("Interactable")) // poderia usar um bool pra checar apenas uma vez mas sla
+        {
+            if(Input.GetKey(KeyCode.F))
+            {
+                interactor.SetActive(true);
+                Debug.Log("Test");
+            }
+        }
+    }
+    
 }
