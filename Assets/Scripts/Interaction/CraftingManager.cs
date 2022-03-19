@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
+
 
 public class CraftingManager : MonoBehaviour
 {
-    public InputAction clique;
     private Item currentItem; // Item atual
     public Image customCursor; // GameObject que fica no mouse
 
@@ -16,10 +15,35 @@ public class CraftingManager : MonoBehaviour
     public string [] recipes; // array de string com os nomes das receitas
     public Item[] recipesResults; // resultado das receitas (obs: deve colocar no inspector a mesma ordem das receitas)
     public Slot resultsSlots; 
-    
+
     void Update()
     {
-        clique.performed  += context => Drag();// checa se soltou o item
+        if(Input.GetMouseButtonUp(0)) // checa se soltou o item
+        {
+            if(currentItem != null) // checa se vc esta dando drag no objeto
+            {
+                customCursor.gameObject.SetActive(false); // desativa o cursor 
+                Slot nearestSlot = null; // Essa variavel serve para verificar onde foi deixado o item, o slot mais perto no caso.
+                float shortestDistance = float.MaxValue;
+
+                foreach(Slot slot in craftingSlots)
+                {
+                    float distance = Vector2.Distance(Input.mousePosition,slot.transform.position); // checa  se a distancia do objeto e menor que distancia mais perto
+                    if(distance < shortestDistance) 
+                    {
+                        shortestDistance = distance; // transforma a menor distancia na distancia atual
+                        nearestSlot = slot; // transforma o slot mais perto no slot atual
+                    }
+                }
+                nearestSlot.gameObject.SetActive(true); // ativa o slot mais perto
+                nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite; // transforma a imagem no sprite colocado por cima
+                nearestSlot.item = currentItem; // seta o slot mais perto no item atual
+                itemList[nearestSlot.index] = currentItem; // preenche a lista de item pra rastrear oque cada slot contem oque
+
+                currentItem = null;
+                CheckForCompleteRecipes();
+            }
+        }
     }
     public void CheckForCompleteRecipes()
     {
@@ -49,7 +73,6 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
-
     public void OnClickedSlot(Slot slot) // retira qualquer item que esta no craft simplesmente clicando nele
     {
         slot.item = null; // seta aquele slot pra Null
@@ -65,37 +88,5 @@ public class CraftingManager : MonoBehaviour
             customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<Image>().sprite;
         }
-    }
-    private void OnEnable() {
-        clique.Enable();
-    }
-    private void OnDisable() {
-        clique.Disable();
-    }
-    public void Drag()
-    {
-        if(currentItem != null) // checa se vc esta dando drag no objeto
-            {
-                customCursor.gameObject.SetActive(false); // desativa o cursor 
-                Slot nearestSlot = null; // Essa variavel serve para verificar onde foi deixado o item, o slot mais perto no caso.
-                float shortestDistance = float.MaxValue;
-
-                foreach(Slot slot in craftingSlots)
-                {
-                    float distance = Vector2.Distance(Input.mousePosition,slot.transform.position); // checa  se a distancia do objeto e menor que distancia mais perto
-                    if(distance < shortestDistance) 
-                    {
-                        shortestDistance = distance; // transforma a menor distancia na distancia atual
-                        nearestSlot = slot; // transforma o slot mais perto no slot atual
-                    }
-                }
-                nearestSlot.gameObject.SetActive(true); // ativa o slot mais perto
-                nearestSlot.GetComponent<Image>().sprite = currentItem.GetComponent<Image>().sprite; // transforma a imagem no sprite colocado por cima
-                nearestSlot.item = currentItem; // seta o slot mais perto no item atual
-                itemList[nearestSlot.index] = currentItem; // preenche a lista de item pra rastrear oque cada slot contem oque
-
-                currentItem = null;
-                CheckForCompleteRecipes();
-            }
     }
 }
