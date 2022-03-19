@@ -18,11 +18,11 @@ public class PlayerInterector : MonoBehaviour
     private void Update()
     {
         CheckInterectable(); 
-
     }
     private void CheckInterectable()
     {
         if (currentInterectable == null) return;
+        OnEnable(); 
         playerInteracion.performed  += context => currentInterectable.Interect();
     }
 
@@ -43,7 +43,7 @@ public class PlayerInterector : MonoBehaviour
         IInterectable interectable = other.GetComponent<IInterectable>();
         if (interectable == null) return;
         if (interectable != currentInterectable) return;
-
+        OnDisable(); 
         currentInterectable = null;
     }
 }
