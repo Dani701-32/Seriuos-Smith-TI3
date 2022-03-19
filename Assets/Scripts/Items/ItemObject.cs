@@ -25,6 +25,7 @@ public abstract class ItemObject : ScriptableObject
     public ItemType type; //Store the type of the object 
 
     public Rarity rarity; // Rarity of the item
+    public int price; 
     [TextArea(15, 20)]
     public string description; //The description of the object
 
