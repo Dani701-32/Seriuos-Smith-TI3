@@ -1208,8 +1208,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   target: {fileID: 1059253472}
-  offset: {x: 0, y: 10, z: 0}
-  lookAt: 0
+  offset: {x: 0, y: 10, z: -7}
+  lookAt: 1
 --- !u!1 &1008321795
 GameObject:
   m_ObjectHideFlags: 0
