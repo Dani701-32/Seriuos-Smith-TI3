@@ -9,12 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b102e7e7266fd8448204dc7f20ac353, type: 3}
-  m_Name: Helmet of I dont know
+  m_Script: {fileID: 11500000, guid: 15ba3d042d1113e4c91eeb1dae637872, type: 3}
+  m_Name: Excalibur
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  type: 1
-  rarity: 0
-  price: 0
-  description: 
-  weight: 0
+  type: 2
+  rarity: 3
+  price: 999999999
+  description: Prince Arthur demands it
+  bladeWeight: 20
+  bladeLengh: 50
+  bladeResistence: 9999
