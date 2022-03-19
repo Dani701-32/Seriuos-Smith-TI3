@@ -5,19 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-<<<<<<< HEAD
-    public float moveSpeed = 5f;
-    public float rotateSpeed = 5f;
-    public Rigidbody rb;
-    float moveX, moveZ;
-
-    Vector3 moveDirection = Vector3.zero;
-
-    void Update()
-    {
-
-    }
-=======
     public CharacterController controller;
     public float speed = 6;
     
@@ -29,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
         float Horizontal = Input.GetAxisRaw("Horizontal");
         float Vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3 (Horizontal , 0f , Vertical).normalized;
->>>>>>> 2dd570ec803635876ff8795c4d86fe5f9d8c6b4e
 
         if(direction.magnitude >= 0.1f)
         {
