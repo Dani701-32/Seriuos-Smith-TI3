@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc5d13b3db5328449d3e3b2df0bc353, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 7112942898739099441, guid: acbe5225cc2395c4e9d112369e53a0a7, type: 3}
   type: 0
   rarity: 0
+  price: 5
   description: Cut down trees to receive this
