@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI; 
 public class DisplayInventory : MonoBehaviour
 {
     public int xStart;
@@ -29,7 +29,7 @@ public class DisplayInventory : MonoBehaviour
         {
             var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-            obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+            obj.GetComponentInChildren<Text>().text = inventory.Container[i].amount.ToString("n0");
             collectablesDisplay.Add(inventory.Container[i], obj); 
         }
     }
@@ -45,13 +45,13 @@ public class DisplayInventory : MonoBehaviour
         {
             if (collectablesDisplay.ContainsKey(inventory.Container[i]))
             {
-                collectablesDisplay[inventory.Container[i]].GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                collectablesDisplay[inventory.Container[i]].GetComponentInChildren<Text>().text = inventory.Container[i].amount.ToString("n0");
             }
             else
             {
                 var obj = Instantiate(inventory.Container[i].item.prefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-                obj.GetComponentInChildren<TextMeshProUGUI>().text = inventory.Container[i].amount.ToString("n0");
+                obj.GetComponentInChildren<Text>().text = inventory.Container[i].amount.ToString("n0");
                 collectablesDisplay.Add(inventory.Container[i], obj); 
 
             }
