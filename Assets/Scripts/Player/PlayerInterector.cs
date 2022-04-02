@@ -1,49 +1,33 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+
 public class PlayerInterector : MonoBehaviour
 {
-    public IInterectable currentInterectable = null;
-
-    private void Update()
+    public GameObject interactor;
+    public Controller control;
+    public Spawn spawner;
+    void OnTriggerStay(Collider other)
     {
-        CheckInterectable(); 
-    }
-    private void CheckInterectable()
-    {
-        if (currentInterectable == null) return;
-        if (Input.GetKeyDown(KeyCode.F))
+        if(other.gameObject.CompareTag("Interactable")) // poderia usar um bool pra checar apenas uma vez mas sla
         {
-            currentInterectable.Interect(); 
+            if(Input.GetKey(KeyCode.F))
+            {
+                interactor.SetActive(true);
+                Debug.Log("Test");
+            }
         }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        //Recebe o objeto que deve ser interagido
-        IInterectable interectable = other.GetComponent<IInterectable>();
-        if (interectable == null) return;
-        currentInterectable = interectable;
-
-    }
-    
-
-    private void OnTriggerExit(Collider other)
-    {
-        IInterectable interectable = other.GetComponent<IInterectable>();
-        if (interectable == null) return;
-        if (interectable != currentInterectable) return;
-        currentInterectable = null;
-    }
-
-    // void OnTriggerStay(Collider other)
-    // {
-    //     if(other.gameObject.CompareTag("Interactable")) // poderia usar um bool pra checar apenas uma vez mas sla
-    //     {
-    //         if(Input.GetKey(KeyCode.F))
-    //         {
-    //             interactor.SetActive(true);
-    //             Debug.Log("Test");
-    //         }
-    //     }
-    // }
-    
+        else if(other.gameObject.CompareTag("Tree")) // interaçao com a arvore
+        {
+            if(Input.GetKey(KeyCode.F))
+            {
+                control.IsCutting = true;
+                Debug.Log("anothertest");
+                spawner.TimeSpawner();
+            }
+                
+        }
+        
+    } 
 }
