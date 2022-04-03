@@ -13,3 +13,13 @@ MonoBehaviour:
   m_Name: MasterController
   m_EditorClassIdentifier: 
   IsCutting: 0
+  money: 0
+  quest:
+    questIsActive: 1
+    requestType: Forjar uma Espada de Ferro
+    requestDiscription: 'Um aventureiro precisa de uma espada de ferro rapido '
+    goldReward: 30
+    goal:
+      goalType: 0
+      requiredAmount: 2
+      currentAmount: 2
