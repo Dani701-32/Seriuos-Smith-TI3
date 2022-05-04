@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
+// OS ITENS ESTAO FICANDO INVISIVEIS APENAS AGORA
 {
     public static InventoryManager Instance;
     public List<Item> Items = new List<Item>();
@@ -12,8 +13,10 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryItem; // Prefab 2D
 
     public Toggle enableRemove;
+    public GameObject closeInventory;
 
     public InventoryItemController[] InventoryItems;
+    public bool addController = false;
 
 
     private void Awake()
@@ -48,41 +51,58 @@ public class InventoryManager : MonoBehaviour
     }
     public void ListItem()
     {
+        
         //Limpar o inventario para nao duplicar o item
         foreach (Transform item in ItemContent)
         {
-            Destroy(item.gameObject);
+            item.gameObject.SetActive(false);
+            //Destroy(item.gameObject);
         }
 
 
-
-        foreach (var item in Items)
+        if(InventoryItems.Length ==0) // Checa se tem algum item dentro da lista
         {
-            GameObject obj = Instantiate(InventoryItem, ItemContent);
-            var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
-            var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
-            var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
-
-            itemName.text = item.ItemName;
-            itemIcon.sprite = item.icon;
-
-            if(enableRemove.isOn)
+            foreach (var item in Items) // Adiciona os itens e imagens necessarios.
             {
-                removeButton.gameObject.SetActive(true); 
+                GameObject obj = Instantiate(InventoryItem, ItemContent);
+                var itemName = obj.transform.Find("ItemName").GetComponent<Text>();
+                var itemIcon = obj.transform.Find("ItemIcon").GetComponent<Image>();
+                var removeButton = obj.transform.Find("RemoveButton").GetComponent<Button>();
+
+                itemName.text = item.ItemName;
+                itemIcon.sprite = item.icon;
+
+                if(enableRemove.isOn) // Checa se o botao de remover itens esta ativado.
+                {
+                    removeButton.gameObject.SetActive(true); 
+                }
             }
+            SetInventoryItems(); // Lista os itens todos novamente (Parte onde esta Bugado)
+            addController = true;
+        }
+        else
+        {
+            addController = false;
         }
 
-        SetInventoryItems();
     }
+
+    public void Close()
+    {
+        closeInventory.gameObject.SetActive(false);
+    }
+
     public void SetInventoryItems() // Seta os filhos que possuem o script de InventoryItemsController
     {
-        InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
-
-        for (int i = 0; i < Items.Count; i++)
+        if(InventoryItems.Length == 0)
         {
-            InventoryItems[i].AddItem(Items[i]);
+            InventoryItems = ItemContent.GetComponentsInChildren<InventoryItemController>();
+            for (int i = 0; i < Items.Count; i++)
+            {
+                InventoryItems[i].AddItem(Items[i]);
+            }
         }
     }
-
-
+    
+    
 }
