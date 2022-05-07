@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item",menuName = "Item/Create New Item")]
 public class Item : ScriptableObject
 {
-    public int id;
-    public string ItemName;
-    public int value;
-    public Sprite icon;
-    public ItemType type; // aqui poderia fazer a comparação se o tipo do item e o msm que deve ser
+    public string ItemName = "New Item";
+    public Sprite icon = null;
 
-    public enum ItemType
+    public virtual void UseItem()   // Script feito para usar o item, tanto pra usar dentro da forja ou fora.
     {
-        IronIngot,Wood
+        // Usar o item para craftar algo
+        Debug.Log("Usando" + name);
     }
-
+    
 }

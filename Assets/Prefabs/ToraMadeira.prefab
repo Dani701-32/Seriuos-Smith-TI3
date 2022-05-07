@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 1383159293344120643}
   - component: {fileID: 2638585575170470118}
   - component: {fileID: 250746719754617900}
-  - component: {fileID: 2638585575170470123}
-  - component: {fileID: 2638585575170470116}
   - component: {fileID: 2638585575170470122}
   m_Layer: 0
   m_Name: ToraMadeira
@@ -86,32 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2638585575170470123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763766872018134521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bbadc1ac843e03489cbb9b99e536d1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: d00f2642135baae42a9b5d4edae5b0ad, type: 2}
---- !u!114 &2638585575170470116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763766872018134521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367b5680431c4604dbc9bbe94de2f92b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: d00f2642135baae42a9b5d4edae5b0ad, type: 2}
 --- !u!65 &2638585575170470122
 BoxCollider:
   m_ObjectHideFlags: 0

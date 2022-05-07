@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 42a162c3d2fc4ca458e97d5dc6bbeaf0, type: 3}
-  m_Name: IngotFerro
+  m_Name: Madeira
   m_EditorClassIdentifier: 
-  id: 1
-  Itemname: IronIngot
-  value: 0
-  icon: {fileID: 21300000, guid: 753d3b70190ecd142ac7b8a14c93d91c, type: 3}
+  ItemName: Madeira nao processada
+  icon: {fileID: 21300000, guid: 92d411734633c3347b2162d7e63cb5b0, type: 3}

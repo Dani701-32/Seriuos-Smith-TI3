@@ -24,12 +24,6 @@ public class Spawn : MonoBehaviour
     }
     public void SpawnObjec() // Spawner
     {
-        if(control.IsCutting)
-        {
-            Instantiate(objectSpawn,transform.position, Quaternion.identity);
-            control.IsCutting = false;
-            Destroy(objectToDestroy);
-            Debug.Log("asd");
-        }
+        
     }
 }
