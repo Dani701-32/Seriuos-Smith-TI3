@@ -28,12 +28,18 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(moveDirection.normalized * speed * Time.deltaTime);
 
         }
+
+        if (Input.GetKey(KeyCode.F))
+        {
+            Debug.Log("Test");
+        }
     }
 
-    public Vector3 GetPosition(){
+    public Vector3 GetPosition()
+    {
         return transform.position;
     }
-    
+
 
 
 }
