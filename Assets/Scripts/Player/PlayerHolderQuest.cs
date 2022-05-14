@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class PlayerHolderQuest : MonoBehaviour // Script pra guardar as quests
 {
-    public Quest quest; // caso queira multiplas quest so mudar para uma Lista
+    public QuestController quest; // caso queira multiplas quest so mudar para uma Lista
     public int gold = 0;
 
-    public void MakeTheThing()
+    public void CheckQuest()
     {
         if (quest.questIsActive)
         {

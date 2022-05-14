@@ -24,24 +24,25 @@ public class QuestGoal // Objetivo da quest
             currentAmount++;
         }
     }
-    public void OrnamentCraft()
+    public void ShieldCraft()
     {
-        if (goalType == QuestGoalType.ornamentCraft)
+        if (goalType == QuestGoalType.shieldCraft)
         {
             currentAmount++;
         }
     }
 
-    public void ArmorCraft()
+    /*public void ArmorCraft()
     {
-        if (goalType == QuestGoalType.armorCraft)
+        if (goalType == QuestGoalType.shieldCraft)
         {
             currentAmount++;
         }
     }
+    */
 }
 public enum QuestGoalType
 { 
-    weaponCraft , ornamentCraft , armorCraft
+    weaponCraft , armoCraft , shieldCraft
 }
 

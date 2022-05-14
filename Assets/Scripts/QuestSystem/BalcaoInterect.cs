@@ -5,22 +5,11 @@ using UnityEngine;
 public class BalcaoInterect : Interactable
 {
     public GameObject questSystemUI;
+    public QuestGiver giverQuest;
     bool hasActive = false;
-    public void OnTriggerEnter(Collider other)
+    public override void Interact()
     {
-        hasActive = true;
-    }
-    public void SetCanvasActive()
-    {
-        if(Input.GetButtonDown("Interaction") && hasActive)
-        {
-            questSystemUI.SetActive(!questSystemUI.activeSelf);
-            Debug.Log("Balcao");
-            hasActive = false;
-        }
-    }
-    public void Update()
-    {
-        SetCanvasActive();
+        base.Interact();
+        giverQuest.OpenQuestWindow();
     }
 }
