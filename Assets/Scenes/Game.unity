@@ -442,6 +442,7 @@ MeshFilter:
   m_GameObject: {fileID: 64969341}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 --- !u!1 &65464033
 GameObject:
@@ -582,6 +583,8 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 102c5b937808aec49afc647a395f7ef1, type: 3}
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
 >>>>>>> parent of 298cc36 (Quest UI controllers)
 --- !u!4 &119734414 stripped
@@ -6243,12 +6246,16 @@ MonoBehaviour:
   titleQuest: {fileID: 2128831754}
   descriptionQuest: {fileID: 1218876910}
 <<<<<<< HEAD
+<<<<<<< HEAD
   goldReward: {fileID: 541493613}
 <<<<<<< Updated upstream
   playerMovement: {fileID: 0}
   playerHolder: {fileID: 0}
 =======
 >>>>>>> Stashed changes
+=======
+  goldReward: {fileID: 0}
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
   goldReward: {fileID: 0}
 >>>>>>> parent of 298cc36 (Quest UI controllers)
@@ -11405,8 +11412,11 @@ PrefabInstance:
     - {fileID: 5134744208864645344, guid: b50e49bf6a18ccc47b25c0657679137b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b50e49bf6a18ccc47b25c0657679137b, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
 >>>>>>> parent of 298cc36 (Quest UI controllers)
 --- !u!1001 &4852883605219225507
@@ -11515,6 +11525,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+  item: {fileID: 11400000, guid: f89e7ac03dbd1804fa2237e83fd78ff7, type: 2}
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
   item: {fileID: 11400000, guid: f89e7ac03dbd1804fa2237e83fd78ff7, type: 2}
 >>>>>>> parent of 298cc36 (Quest UI controllers)
@@ -11540,7 +11554,10 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
 >>>>>>> parent of 298cc36 (Quest UI controllers)
 --- !u!4 &8893474207734791006 stripped
@@ -11549,8 +11566,11 @@ Transform:
   m_PrefabInstance: {fileID: 4335190778180430773}
   m_PrefabAsset: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
 >>>>>>> parent of 298cc36 (Quest UI controllers)
 --- !u!114 &8893474207734791012
@@ -11566,7 +11586,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+  item: {fileID: 11400000, guid: bad3f1552bbcd3044bc1bc141057a63b, type: 2}
+>>>>>>> parent of 298cc36 (Quest UI controllers)
 =======
   item: {fileID: 11400000, guid: bad3f1552bbcd3044bc1bc141057a63b, type: 2}
 >>>>>>> parent of 298cc36 (Quest UI controllers)
