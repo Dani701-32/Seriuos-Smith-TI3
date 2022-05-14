@@ -13,6 +13,7 @@ public class Interactable : MonoBehaviour
     {
         // Esse metodo funciona para chamar metodos dentro dele.
         //This method is meant to be overwritten
+
         Debug.Log("Interagindo com: " + transform.name);
     }
 }
