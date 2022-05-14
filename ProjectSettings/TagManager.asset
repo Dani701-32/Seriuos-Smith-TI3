@@ -6,8 +6,8 @@ TagManager:
   tags:
   - Interactable
   - Tree
-  - Smith2
-  - Counter
+  - Item
+  - Pedidos
   layers:
   - Default
   - TransparentFX
