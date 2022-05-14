@@ -5,29 +5,54 @@ using System.Collections.Generic;
 
 public class PlayerInterector : MonoBehaviour
 {
+    /*
+    public itemPickUp pickItem;
     public GameObject interactor;
     public Controller control;
-    public Spawn spawner;
-    void OnTriggerStay(Collider other)
+    
+    public QuestGiver giver;
+    public GameObject fButton;
+    bool active;
+
+    public void Update()
     {
-        if(other.gameObject.CompareTag("Interactable")) // poderia usar um bool pra checar apenas uma vez mas sla
+        if (Input.GetKeyDown(KeyCode.F) && active == true)
         {
-            if(Input.GetKey(KeyCode.F))
-            {
-                interactor.SetActive(true);
-                Debug.Log("Test");
-            }
+            giver.OpenQuestWindow();
+            fButton.SetActive(false);
         }
-        else if(other.gameObject.CompareTag("Tree")) // interaçao com a arvore
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        ProcessCollisions(other.gameObject);
+    }
+    private void OntriggerExit(Collider other)
+    {
+
+        if (other.gameObject.CompareTag("Pedidos"))
         {
-            if(Input.GetKey(KeyCode.F))
-            {
-                control.IsCutting = true;
-                Debug.Log("anothertest");
-                spawner.TimeSpawner();
-            }
-                
+            fButton.SetActive(false);
+            active = false;
         }
+    }
+    void ProcessCollisions(GameObject collisions)
+    {
+        Debug.Log("teste");
         
-    } 
+        /*if (collisions.gameObject.CompareTag("Item"))
+        {
+            pickItem.PickUp();
+        }
+        else if (collisions.gameObject.CompareTag("Pedidos"))
+        {
+            fButton.SetActive(true);
+            active = true;
+
+        }
+    }
+    public virtual void Interact()
+    {
+        Debug.Log("Interaction with: " + transform.name);
+    }
+    */
 }
