@@ -31,13 +31,7 @@ public class QuestGoal // Objetivo da quest
             currentAmount++;
         }
     }
-    public void ToolsCraft()
-    {
-        if (goalType == QuestGoalType.toolsCraft)
-        {
-            currentAmount++;
-        }
-    }
+
     public void ArmorCraft()
     {
         if (goalType == QuestGoalType.armorCraft)
@@ -48,6 +42,6 @@ public class QuestGoal // Objetivo da quest
 }
 public enum QuestGoalType
 { 
-    weaponCraft , ornamentCraft , toolsCraft , armorCraft
+    weaponCraft , ornamentCraft , armorCraft
 }
 

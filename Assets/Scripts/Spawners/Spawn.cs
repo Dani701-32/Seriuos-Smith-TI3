@@ -8,7 +8,7 @@ public class Spawn : MonoBehaviour
     public GameObject objectToDestroy;
     float timeToSpawn = 3.0f;
     float currentTime;
-    public Controller control;
+    
 
     public void TimeSpawner() // Gambiarra praa n spawnar um monte de obj
     {
