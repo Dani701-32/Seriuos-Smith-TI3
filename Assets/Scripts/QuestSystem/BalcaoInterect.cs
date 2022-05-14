@@ -6,13 +6,10 @@ public class BalcaoInterect : Interactable
 {
     public GameObject questSystemUI;
     public QuestGiver giverQuest;
-    // bool hasActive = false;
+    bool hasActive = false;
     public override void Interact()
     {
-        // if (Input.GetKeyDown(KeyCode.F))
-        // {
-            base.Interact();
-            giverQuest.OpenQuestWindow();
-        // }
+        base.Interact();
+        giverQuest.OpenQuestWindow();
     }
 }

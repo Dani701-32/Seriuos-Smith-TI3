@@ -6,7 +6,6 @@ using UnityEngine;
 public class QuestGoal // Objetivo da quest
 {
     public QuestGoalType goalType;
-    public MaterialType materialType;
 
     public int requiredAmount; //amontuado necessario 
     public int currentAmount; // amontuado atual 
@@ -15,19 +14,19 @@ public class QuestGoal // Objetivo da quest
     {
         return (currentAmount >= requiredAmount);
     }
-
-    ///////////////////EXEMPLES/////////////////////////////
-
+    /// <summary>
+    /// ///////////////////EXEMPLES/////////////////////////////
+    /// </summary>
     public void WeaponCraft()
     {
-        if (goalType == QuestGoalType.WeaponCraft)
+        if(goalType == QuestGoalType.weaponCraft)
         {
             currentAmount++;
         }
     }
     public void ShieldCraft()
     {
-        if (goalType == QuestGoalType.ArmorCraft)
+        if (goalType == QuestGoalType.shieldCraft)
         {
             currentAmount++;
         }
@@ -43,12 +42,7 @@ public class QuestGoal // Objetivo da quest
     */
 }
 public enum QuestGoalType
-{
-    WeaponCraft, ArmorCraft, ShieldCraft
-}
-
-public enum MaterialType
-{
-    Wood, Copper, Iron, Steel
+{ 
+    weaponCraft , armoCraft , shieldCraft
 }
 
