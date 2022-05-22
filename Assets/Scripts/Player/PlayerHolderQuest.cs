@@ -5,18 +5,22 @@ using UnityEngine;
 public class PlayerHolderQuest : MonoBehaviour // Script pra guardar as quests
 {
     public QuestController quest; // caso queira multiplas quest so mudar para uma Lista
+
     public int gold = 0;
 
-    public void CheckQuest()
+    public bool HasQuest()
     {
-        if (quest.questIsActive)
-        {
-            quest.goal.WeaponCraft();
-            if (quest.goal.IsReached())
-            {
-                gold += quest.goldReward;
-                quest.QuestCompleted();
-            }
+        return (quest == null) ? false : true;
+    }
+
+    public void AdvanceQuest(Item item)
+    {
+        if (quest.goal.goalType == item.goalType && quest.goal.materialType == item.materialType)
+        {   
+            quest.goal.currentAmount++; 
+            quest.questCompletd = quest.goal.IsReached(); 
         }
     }
+
+
 }

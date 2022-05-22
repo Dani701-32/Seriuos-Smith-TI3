@@ -28,11 +28,11 @@ public class InventorySlot : MonoBehaviour
     {
         Inventory.instance.Remove(item);    // Pega a instancia do item dentro do inventario e remove ele da lista.
     }
-    public void UseItemSlot()
-    {
-        if(item != null)
-        {
-            item.UseItem();
-        }
-    }
+    // public void UseItemSlot()
+    // {
+    //     if(item != null)
+    //     {
+    //         item.UseItem();
+    //     }
+    // }
 }

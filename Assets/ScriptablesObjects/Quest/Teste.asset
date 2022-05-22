@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 219916a3c30f2c346bef95154b18b888, type: 3}
-  m_Name: Quest1
+  m_Name: Teste
   m_EditorClassIdentifier: 
   questIsActive: 0
   questCompletd: 0
-  titleQuest: ' Aprendiz audaz'
-  descriptionQuest: "Preciso treinar meu aprendiz, uma armadura o ajudaria ele a
-    ter mais confian\xE7a contra os animais selvagens."
-  goldReward: 30
+  titleQuest: Pegar Madeira
+  descriptionQuest: Pegue Madeira
+  goldReward: 15
   goal:
-    goalType: 1
+    goalType: 3
     materialType: 0
     requiredAmount: 1
     currentAmount: 0
