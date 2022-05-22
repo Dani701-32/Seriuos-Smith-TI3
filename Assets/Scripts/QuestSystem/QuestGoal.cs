@@ -18,20 +18,25 @@ public class QuestGoal // Objetivo da quest
 
     ///////////////////EXEMPLES/////////////////////////////
 
-    public void WeaponCraft()
-    {
-        if (goalType == QuestGoalType.WeaponCraft)
-        {
-            currentAmount++;
-        }
-    }
-    public void ShieldCraft()
-    {
-        if (goalType == QuestGoalType.ArmorCraft)
-        {
-            currentAmount++;
-        }
-    }
+    // public void WeaponCraft()
+    // {
+    //     if (goalType == QuestGoalType.WeaponCraft)
+    //     {
+    //         currentAmount++;
+    //     }
+    // }
+    // public void ShieldCraft()
+    // {
+    //     if (goalType == QuestGoalType.ArmorCraft)
+    //     {
+    //         currentAmount++;
+    //     }
+    // }
+
+    // public void RawMaterial()
+    // {
+
+    // }
 
     /*public void ArmorCraft()
     {
@@ -44,7 +49,7 @@ public class QuestGoal // Objetivo da quest
 }
 public enum QuestGoalType
 {
-    WeaponCraft, ArmorCraft, ShieldCraft
+    WeaponCraft, ArmorCraft, ShieldCraft, RawMaterial
 }
 
 public enum MaterialType

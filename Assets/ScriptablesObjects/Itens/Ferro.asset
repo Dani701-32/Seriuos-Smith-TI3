@@ -15,3 +15,5 @@ MonoBehaviour:
   itemType: 1
   ItemName: Ingot de ferro nao forjado
   icon: {fileID: 21300000, guid: 6e4ba7a97b725604494b13297b618273, type: 3}
+  goalType: 3
+  materialType: 2

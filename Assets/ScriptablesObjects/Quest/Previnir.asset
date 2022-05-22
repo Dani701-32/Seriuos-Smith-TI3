@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219916a3c30f2c346bef95154b18b888, type: 3}
   m_Name: Previnir
   m_EditorClassIdentifier: 
-  questIsActive: 0
+  questIsActive: 1
+  questCompletd: 1
   titleQuest: Previnir
   descriptionQuest: "Dizem \xE9 perigoso andar a noite, mas uma boa armadura poderia
     dar uma certa seguran\xE7a."
   goldReward: 15
   goal:
     goalType: 0
+    materialType: 2
     requiredAmount: 1
-    currentAmount: 0
+    currentAmount: 1
