@@ -30,7 +30,7 @@ public class InventoryUI : MonoBehaviour
         {
             if(i < inventory.items.Count) // se existe itens para ser adicionados no inventario
             {
-                slots[i].AddItem(inventory.items[i]);   //adiciona no inventario
+                slots[i].AddItem(inventory.items[i]);   //adiciona na UI do inventario
             }
             else    // senao tiver items a ser adicionados
             {

@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
     public OnItemChanged onItemChangedCallBack;
 
     public List<Item> items = new List<Item>();
-    public int space = 20;
+    public int space = 20; // tamanho do inventario
     public bool Add (Item item) // Adiciona um novo item ao inventario
     {
         if(items.Count >= space)
@@ -50,6 +50,16 @@ public class Inventory : MonoBehaviour
         if(onItemChangedCallBack != null)
         {
             onItemChangedCallBack.Invoke(); // quando tem alguma modificação na UI chama essa função pra redefinir a UI
+        }
+    }
+    public void BaterMartelao()
+    {
+        foreach(Item item in items)
+        {
+            if(item.itemType == Item.ItemType.Ferro)
+            {
+                
+            }
         }
     }
 }

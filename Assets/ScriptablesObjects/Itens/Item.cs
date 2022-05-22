@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item",menuName = "Item/Create New Item")]
 public class Item : ScriptableObject
 {
+    public ItemType itemType;
     public string ItemName = "New Item";
     public Sprite icon = null;
 
@@ -12,4 +13,9 @@ public class Item : ScriptableObject
         Debug.Log("Usando" + name);
     }
     
+
+    public enum ItemType
+    {
+        Madeira , Ferro 
+    }
 }
