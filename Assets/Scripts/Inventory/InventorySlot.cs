@@ -5,9 +5,13 @@ public class InventorySlot : MonoBehaviour
 {
     public Image icon;  // Icone do ScriptableObject 
     public Button removeButton; //Botao de remover o item do inventario
+    [SerializeField] private Forge forjao;
+    public Item item;
 
-    Item item;
-
+    void Awake()
+    {
+        forjao = GameObject.FindGameObjectWithTag("GameController").GetComponent<Forge>();
+    }
     public void AddItem(Item newItem)
     {
         item = newItem;
@@ -26,13 +30,13 @@ public class InventorySlot : MonoBehaviour
     }
     public void OnRemoveButton()
     {
-        Inventory.instance.Remove(item);    // Pega a instancia do item dentro do inventario e remove ele da lista.
+        Inventory.instance.Remove(item);    // Pega o item dentro do inventario e remove ele da lista.
     }
     public void UseItemSlot() // clicar no item e usar ele.
     {
-        if(item != null)
+        if(forjao.ClickItem(item))
         {
-            item.UseItem();
+            Inventory.instance.Remove(item);
         }
     }
 }

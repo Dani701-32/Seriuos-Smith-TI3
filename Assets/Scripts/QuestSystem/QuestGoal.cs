@@ -56,4 +56,8 @@ public enum MaterialType
 {
     Wood, Copper, Iron, Steel
 }
+public enum States
+{
+    Ambiente , Quente , Frio , Queimado , Quebrado
+}
 
