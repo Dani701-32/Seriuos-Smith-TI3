@@ -63,7 +63,7 @@ public class QuestDelivery : MonoBehaviour
     public void Complete()
     {
         playerHolder.gold += currentQuest.goldReward;
-        _inventory.Remove(currentQuest.goal.materialType, currentQuest.goal.requiredAmount);
+        _inventory.Remove(currentQuest.goal.materialType, currentQuest.goal.requiredAmount,currentQuest.goal.goalType);
         playerMovement.enabled = true;
         RemoveQuest();
         playerHolder.quest = null;

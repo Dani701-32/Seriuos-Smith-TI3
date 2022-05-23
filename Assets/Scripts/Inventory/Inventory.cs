@@ -70,11 +70,11 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Remove(MaterialType type, int amout)
+    public void Remove(MaterialType type, int amout, QuestGoalType typeGoal)
     {
         for(int i = 0; i < items.Count; i++)
         {
-            if (items[i].materialType == type && amout > 0)
+            if (items[i].materialType == type && amout > 0 && items[i].goalType == typeGoal)
             {
                 items.Remove(items[i]);
                 amout--;
