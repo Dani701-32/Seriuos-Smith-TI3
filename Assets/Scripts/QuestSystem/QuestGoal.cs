@@ -54,10 +54,13 @@ public enum QuestGoalType
 
 public enum MaterialType
 {
-    Wood, Copper, Iron, Steel
+    Wood, Copper, Iron, Steel, BluePrints
 }
 public enum States
 {
-    Ambiente , Quente , Frio , Queimado , Quebrado
+    Ambiente , Quente , Frio , Queimado
+}
+public enum TrabState{
+      Natural, Quebrado , Moldando , Moldado
 }
 
