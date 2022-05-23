@@ -8,12 +8,12 @@ public class Forge : MonoBehaviour
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Item item;
-    [SerializeField] private Text textButton;
-    [SerializeField] private ForgeUI forjaUI;
     [SerializeField]Inventory inventario;
+    [SerializeField] private Text textButton;
+    //[SerializeField] private ForgeUI forjaUI;
     [SerializeField] Slider slider;
     States estados; // 
-    public InventorySlot slotForja;
+    public InventorySlot slot;
     public GameObject UI_Forja;
     public bool taPegandoFogo;
     float temperatura;
@@ -27,10 +27,10 @@ public class Forge : MonoBehaviour
         playerMovement = p.GetComponent<PlayerMovement>();
         textButton = GameObject.Find("T_Esquentar").GetComponent<Text>();
         slider = GameObject.Find("FornalhaSlider").GetComponent<Slider>();
-        UI_Forja.SetActive(false);
         taPegandoFogo = false;
         temperatura = 25;
         textButton.text = "Ascender";
+        UI_Forja.SetActive(false);
     }
     public void AbrirTela()
     {
@@ -42,15 +42,22 @@ public class Forge : MonoBehaviour
         playerMovement.enabled = true;
         UI_Forja.SetActive(false);
     }
-    public bool ClickItem(Item item)
+    public bool ClickItem(Item item) // Coloca o item no slot
     {
-        if(this.item == null)
+        if(this.item == null && item != null)
         {
             this.item = item;
-            slotForja.AddItem(item);
+            slot.AddItem(item);
             return true;
         }
         return false;
+    }
+    public void PegarItem() // Função para clicar no slot e puxar o item ja feito para o inventario
+    {
+        if(item == null) return;
+        inventario.Add(item);
+        slot.ClearSlot();
+        item = null;
     }
     public void Fogo()
     {
@@ -58,7 +65,7 @@ public class Forge : MonoBehaviour
 
         textButton.text = (taPegandoFogo)? "Apagar" : "Ascender";
     }
-    private void EsquentarItem()
+    private void EsquentarItem() // Esquenta o material
     {
         if(item == null) return;
         item.temperatura = temperatura;
@@ -70,12 +77,6 @@ public class Forge : MonoBehaviour
         {
             item.statesTypes = States.Queimado;
         }
-    }
-    public void PegarItem()
-    {
-        if(item == null) return;
-        inventario.Add(item);
-        slotForja.ClearSlot();
     }
     public void FixedUpdate()
     {
