@@ -8,6 +8,9 @@ public class Item : ScriptableObject
     public QuestGoalType goalType;
     public MaterialType materialType;
     public States statesTypes;
+    public TrabState trabState; 
+    public int minBatidas;
+    public int limiteBatidas;
 
     public float temperatura = 25; //em graus
     public float temperaturaQuente;
