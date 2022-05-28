@@ -9,6 +9,7 @@ public class Bigorna : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Item item, itemResult;
     [SerializeField] Slider slider;
+    [SerializeField] Text batidasTexto;
     [SerializeField] float minValue = -1;
     [SerializeField] int batidasCertas;
     [SerializeField] int batidasErradas;
@@ -93,7 +94,11 @@ public class Bigorna : MonoBehaviour
     public void Bater()
     {
         Debug.Log(100 - Mathf.Abs(minValue) * 100);
-        if (minValue >= -0.2 && minValue <= 0.2) batidasCertas++;
+        if (minValue >= -0.2 && minValue <= 0.2)
+        {
+            batidasCertas++;
+            batidasTexto.text = batidasCertas.ToString();
+        }
         else batidasErradas++;
 
         minValue = -1;

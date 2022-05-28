@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   ItemName: Sword
-  icon: {fileID: 21300000, guid: 753d3b70190ecd142ac7b8a14c93d91c, type: 3}
+  icon: {fileID: 924494539, guid: cf356dbe7a13f4f498bf2e8740ebe37b, type: 3}
   goalType: 0
   materialType: 2
+  statesTypes: 0
+  trabState: 0
+  minBatidas: 0
+  limiteBatidas: 0
+  temperatura: 25
+  temperaturaQuente: 0
+  temperaturaQueimado: 0

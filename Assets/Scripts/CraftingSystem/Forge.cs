@@ -9,9 +9,10 @@ public class Forge : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private Item item;
     [SerializeField]Inventory inventario;
-    [SerializeField] private Text textButton;
+   
     //[SerializeField] private ForgeUI forjaUI;
     [SerializeField] Slider slider;
+    [SerializeField] Text textoTemperatura;
     States estados; // 
     public InventorySlot slot;
     public GameObject UI_Forja;
@@ -25,11 +26,11 @@ public class Forge : MonoBehaviour
         inventario = gameObject.GetComponent<Inventory>();
         GameObject p = GameObject.FindGameObjectWithTag("Player");
         playerMovement = p.GetComponent<PlayerMovement>();
-        textButton = GameObject.Find("T_Esquentar").GetComponent<Text>();
+        
         slider = GameObject.Find("FornalhaSlider").GetComponent<Slider>();
         taPegandoFogo = false;
         temperatura = 25;
-        textButton.text = "Ascender";
+        
         UI_Forja.SetActive(false);
     }
     public void AbrirTela()
@@ -63,7 +64,7 @@ public class Forge : MonoBehaviour
     {
         taPegandoFogo = (taPegandoFogo)? false : true;
 
-        textButton.text = (taPegandoFogo)? "Apagar" : "Ascender";
+        
     }
     private void EsquentarItem() // Esquenta o material
     {
@@ -84,12 +85,14 @@ public class Forge : MonoBehaviour
         {
             temperatura += 30f * Time.deltaTime;
             slider.value = temperatura;
+            textoTemperatura.text = temperatura.ToString();
             EsquentarItem();
         }
         else if(temperatura > 25 && !taPegandoFogo )
         {
             temperatura -= 30f * Time.deltaTime;
             slider.value = temperatura;
+            textoTemperatura.text = temperatura.ToString();
             EsquentarItem();
         }
     }

@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a162c3d2fc4ca458e97d5dc6bbeaf0, type: 3}
   m_Name: SwordBluePrint
   m_EditorClassIdentifier: 
-  ItemName: Sword
-  icon: {fileID: 51793862, guid: aa456c9d858957b43baa660116ad0ba2, type: 3}
+  ItemName: Iron Iron Sword
+  icon: {fileID: -1318758379, guid: cf356dbe7a13f4f498bf2e8740ebe37b, type: 3}
   goalType: 0
-  materialType: 4
+  materialType: 2
   statesTypes: 0
   trabState: 3
   minBatidas: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ferro
   m_EditorClassIdentifier: 
   ItemName: Iron
-  icon: {fileID: 21300000, guid: 6e4ba7a97b725604494b13297b618273, type: 3}
+  icon: {fileID: -1693252006, guid: 426402852e3e8a14f91e07e120e15158, type: 3}
   goalType: 3
   materialType: 2
   statesTypes: 1
