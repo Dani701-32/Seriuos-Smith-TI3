@@ -55,7 +55,7 @@ public class SettingsMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("House_Interior");
     }
     public void QuitGame()
     {
