@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Forge : MonoBehaviour
 {
@@ -85,14 +86,14 @@ public class Forge : MonoBehaviour
         {
             temperatura += 30f * Time.deltaTime;
             slider.value = temperatura;
-            textoTemperatura.text = temperatura.ToString();
+            textoTemperatura.text = Math.Round(temperatura,3).ToString();
             EsquentarItem();
         }
         else if(temperatura > 25 && !taPegandoFogo )
         {
             temperatura -= 30f * Time.deltaTime;
             slider.value = temperatura;
-            textoTemperatura.text = temperatura.ToString();
+            textoTemperatura.text = Math.Round(temperatura,3).ToString();
             EsquentarItem();
         }
     }
