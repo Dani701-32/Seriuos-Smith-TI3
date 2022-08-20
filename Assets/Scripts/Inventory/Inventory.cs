@@ -5,12 +5,12 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     #region Singleton
-    [SerializeField] private PlayerHolderQuest playerHolder;
+    [SerializeField] private Player playerHolder;
     public static Inventory instance;
 
     void Awake()
     {
-        playerHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHolderQuest>();
+        playerHolder = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         if (instance != null)
         {
             Debug.LogWarning("More than one inventory found");

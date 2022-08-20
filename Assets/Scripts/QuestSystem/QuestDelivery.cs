@@ -7,7 +7,7 @@ public class QuestDelivery : MonoBehaviour
 {
     [SerializeField] private Inventory _inventory;
     [SerializeField] private QuestController currentQuest;
-    [SerializeField] private PlayerHolderQuest playerHolder;
+    [SerializeField] private Player playerHolder;
     [SerializeField] private PlayerMovement playerMovement;
     private bool questCompleted;
     public GameObject questUI;
@@ -23,7 +23,7 @@ public class QuestDelivery : MonoBehaviour
         questUI.SetActive(false);
         _inventory = gameObject.GetComponent<Inventory>();
         GameObject p = GameObject.FindGameObjectWithTag("Player");
-        playerHolder = p.GetComponent<PlayerHolderQuest>();
+        playerHolder = p.GetComponent<Player>();
         playerMovement = p.GetComponent<PlayerMovement>();
         titleQuest.text = "Current quest empty";
         titleStatus.text = "";

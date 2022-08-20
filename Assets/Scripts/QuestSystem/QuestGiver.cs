@@ -14,7 +14,7 @@ public class QuestGiver : MonoBehaviour // Aqui vai ser onde vai ter as quest/re
     public Text goldReward;
     public Text buttonDeclinedQuest;
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private PlayerHolderQuest playerHolder;
+    [SerializeField] private Player playerHolder;
     [SerializeField] private Inventory _inventory;
     [SerializeField] private QuestDelivery delivery;
     private void Awake()
@@ -30,7 +30,7 @@ public class QuestGiver : MonoBehaviour // Aqui vai ser onde vai ter as quest/re
             controllerQuest.Enqueue(item);
         }
         GameObject p = GameObject.FindGameObjectWithTag("Player");
-        playerHolder = p.GetComponent<PlayerHolderQuest>();
+        playerHolder = p.GetComponent<Player>();
         playerMovement = p.GetComponent<PlayerMovement>();
 
     }
