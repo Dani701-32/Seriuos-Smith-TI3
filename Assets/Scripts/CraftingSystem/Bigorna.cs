@@ -118,6 +118,7 @@ public class Bigorna : MonoBehaviour
         Clicar = true;
         BotaoIniciar.SetActive(false);
         BotaoBater.SetActive(true);
+        GI.playerHolderQuest.energy -= 10;
     }
 
     void Update()
